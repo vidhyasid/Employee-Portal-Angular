@@ -1,0 +1,33 @@
+<div class="modal">
+<br><br><br><br>
+<h2>Login Page</h2>
+
+          <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+              <div class="container">
+              <label for="username" class ="label"><font color=#369 size="4">UserName:</font></label>
+              <input type="text" [(ngModel)]="loginmodel.username" 
+                class="form-control"
+                id="username"
+                name="username"
+                placeholder="username"
+                required #username="ngModel">
+            </div>
+            <div class="container">
+              <label for="password" class ="label"><font color=#369 size="4">Password:</font></label>
+              <input type="text" [(ngModel)]="loginmodel.password" 
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="password"
+                required #password="ngModel">             
+            </div>
+            <br><br>           
+              <button type="submit" [disabled]="!userForm.form.valid" 
+                class="btn btn-info">Login</button>            
+          </form>
+<br><br><br>
+<div class="alert" *ngIf = "alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        UserName or Password is not correct.
+</div>
+</div>

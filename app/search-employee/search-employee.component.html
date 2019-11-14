@@ -1,0 +1,62 @@
+
+    <app-employee-information></app-employee-information>
+    <br><br><br><br><br><br>
+          <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+              <div class="container">
+              <label for="employeeId"class ="label"><font color=#369 size="4">Employee Id:</font></label>
+              <input type="text" [(ngModel)]="employee.employeeId" 
+                class="form-control"
+                id="employeeId"
+                name="employeeId"
+                placeholder="Enter Employee Id"
+                required #employeeId="ngModel">
+                <br>
+
+              <label for="firstName"class ="label"><font color=#369 size="4">First Name:</font></label>
+              <input type="text" [(ngModel)]="employee.firstName" 
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter First Name"
+                required #firstName="ngModel"> 
+                <br>            
+           
+              <label for="lastName"class ="label"><font color=#369 size="4">Last Name:</font></label>
+              <input type="text" [(ngModel)]="employee.lastName" 
+                  class="form-control"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter Last Name"
+                  required #lastName="ngModel">               
+              </div>
+            <button type="submit" [disabled]="!userForm.form.valid" 
+              class="btn btn-info">Submit</button>
+          </form>
+        
+<div class="card my-5" *ngIf = "display">
+   <br><br>
+      <table>
+            <thead style="width:100%">
+              <tr>              
+                <th scope="col">EmployeeId</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Middle Name</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Passport Number</th>
+                <th scope="col">SSN</th>
+              </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{ employeelist.employeeId }}</td>
+                        <td>{{ employeelist.firstName }}</td>
+                        <td>{{ employeelist.lastName }}</td>
+                        <td>{{ employeelist.middleName }}</td>
+                        <td>{{ employeelist.dateOfBirth  }}</td>
+                        <td>{{ employeelist.passportNumber }}</td>
+                        <td>{{ employeelist.ssn }}</td>   	           
+                    </tr>
+            </tbody>
+        </table>
+</div>

@@ -1,0 +1,72 @@
+
+    <app-employee-information></app-employee-information>
+    <br><br><br>
+          <form (ngSubmit)="onSubmit()" #userForm="ngForm">                                
+              <div class="container">
+              <label for="employeeId" class ="label"><font color=#369 size="4">Employee Id:</font></label>
+              <input type="text" [(ngModel)]="employee.employeeId" 
+                class="form-control"
+                id="employeeId"
+                name="employeeId"
+                placeholder="Enter Employee Id"
+                required #employeeId="ngModel">
+              <br>
+              <label for="firstName"class ="label"><font color=#369 size="4">First Name:</font></label>
+              <input type="text" [(ngModel)]="employee.firstName" 
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter First Name"
+                required #firstName="ngModel">   
+                <br>          
+            
+              <label for="lastName"class ="label"><font color=#369 size="4">Last Name:</font></label>
+              <input type="text" [(ngModel)]="employee.lastName" 
+                      class="form-control"
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Enter Last Name"
+                      required #lastName="ngModel">  
+              <br>             
+            
+              <label for="middleName"class ="label"><font color=#369 size="4">Middle Name:</font></label>
+              <input type="text" [(ngModel)]="employee.middleName" 
+                          class="form-control"
+                          id="middleName"
+                          name="middleName"
+                          placeholder="Enter Middle Name">   
+              <br>            
+            
+              <label for="dateOfBirth"class ="label"><font color=#369 size="4">Date Of Birth:</font></label>
+              <input type="text" [(ngModel)]="employee.dateOfBirth" 
+                      class="form-control"
+                      id="dateOfBirth"
+                      name="dateOfBirth"
+                      placeholder="YYYY-MM-DD"
+                      required #dateOfBirth="ngModel"> 
+              <br>              
+            
+                    <label for="passportNumber"class ="label"><font color=#369 size="4">Passport Number:</font></label>
+                    <input type="text" [(ngModel)]="employee.passportNumber" 
+                      class="form-control"
+                      id="passportNumber"
+                      name="passportNumber"
+                      placeholder="Enter Passport Number"> 
+                      <br>                                   
+            
+                    <label for="ssn"class ="label"><font color=#369 size="4">SSN:</font></label>
+                    <input type="text" [(ngModel)]="employee.ssn" 
+                      class="form-control"
+                      id="ssn"
+                      name="ssn"
+                      placeholder="Enter SSN">               
+            </div>
+            <button type="submit"  
+              class="btn btn-info">Submit</button>
+          </form>
+      <br><br><br>
+      <div class="alert" *ngIf = "alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              Employee has been added.
+      </div>
+

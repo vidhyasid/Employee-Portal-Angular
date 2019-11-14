@@ -1,0 +1,31 @@
+
+    <app-employee-information></app-employee-information>
+    <br><br><br><br><br><br>
+          <table style="width:100%">    
+            <thead>
+              <tr>             
+                <th scope="col">EmployeeId</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Middle Name</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Passport Number</th>
+                <th scope="col">SSN</th>               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <td>{{ employee.employeeId }}</td>
+                <td>{{ employee.firstName }}</td>
+                <td>{{ employee.lastName }}</td>
+                <td>{{ employee.middleName }}</td>
+                <td>{{ employee.dateOfBirth  }}</td>
+                <td>{{ employee.passportNumber }}</td>
+                <td>{{ employee.ssn }}</td>   
+                <td><button type="submit"  
+                  class="btn btn-info" (click)="onDelete(employee.employeeId)">Delete</button></td>          	          
+              </tr>
+            </tbody>
+          </table>
+  <router-outlet></router-outlet>
+
